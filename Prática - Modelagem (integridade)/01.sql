@@ -19,7 +19,7 @@ CREATE TABLE cities (
 	"stateId" INTEGER NOT NULL REFERENCES "states"("id")
 );
 
-CREATE TABLE customerAddresses (
+CREATE TABLE "customerAddresses" (
 	id SERIAL PRIMARY KEY,
     "customerId" INTEGER UNIQUE NOT NULL REFERENCES "customers"("id"),
     street VARCHAR(40) NOT NULL,
@@ -29,14 +29,14 @@ CREATE TABLE customerAddresses (
 	"cityId" INTEGER NOT NULL REFERENCES "cities"("id")
 );
 
-CREATE TABLE customerPhones (
+CREATE TABLE "customerPhones" (
 	id SERIAL PRIMARY KEY,
     "customerId" INTEGER NOT NULL REFERENCES "customers"("id"),
     "number" INTEGER NOT NULL,
     type VARCHAR(40) NOT NULL,
 );
 
-CREATE TABLE bankAccount (
+CREATE TABLE "bankAccount" (
 	id SERIAL PRIMARY KEY,
     "customerId" INTEGER NOT NULL REFERENCES "customers"("id"),
     "accountNumber" INTEGER NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE transactions (
     cancelled BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-CREATE TABLE creditCards (
+CREATE TABLE "creditCards" (
 	id SERIAL PRIMARY KEY,
     "bankAccountId" INTEGER NOT NULL REFERENCES "bankAccount"("id"),
     name VARCHAR(20) NOT NULL,
