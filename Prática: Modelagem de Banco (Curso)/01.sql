@@ -1,3 +1,5 @@
+/* link to drawing: https://dbdesigner.page.link/qS3r7UiBdabzuqYR8
+ */
 CREATE DATABASE drivencourse;
 
 CREATE TABLE "classes" (
