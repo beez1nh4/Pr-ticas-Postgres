@@ -16,7 +16,7 @@ CREATE TABLE "airports" (
 
 CREATE TABLE "flights" (
 	id SERIAL PRIMARY KEY,
-    "companyId" INTEGER UNIQUE NOT NULL REFERENCES "companies"("id"),
+    "companyId" INTEGER NOT NULL REFERENCES "companies"("id"),
     "acronym" TEXT UNIQUE NOT NULL,
     "departureAirportId" INTEGER NOT NULL REFERENCES "airports"("id"),
     "destinationAirportId" INTEGER NOT NULL REFERENCES "airports"("id"),
